@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h1>{{=pageWiki.title}}</h1>
+[ {{=A('home', _href=URL('index', args=request.args))}} |
+{{=A('edit', _href=URL('edit', args=request.args))}}
+| {{=A('documents', _href=URL('documents', args=request.args))}} ]<br />
+{{=MARKMIN(pageWiki.body)}}
+<h2>Comments</h2>
+{{for post in comments:}}
+  <p>{{=db.auth_user[post.created_by]}} on {{=post.created_on}}
+     says <i>{{=post.body}}</i></p>
+{{pass}}
+<h2>Post a comment</h2>
+{{=form}}

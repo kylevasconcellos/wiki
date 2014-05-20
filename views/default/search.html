@@ -1,0 +1,5 @@
+{{extend 'layout.html'}}
+<h1>Search wiki pages</h1>
+[ {{=A('home', _href=URL('index', args=request.args))}}
+| {{=A('listall', _href=URL('index'))}}]<br />
+{{=form}}<br />{{=target_div}}

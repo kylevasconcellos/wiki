@@ -1,0 +1,18 @@
+<html>
+	<head></head>
+	<body>
+		{{left_sidebar_enabled,right_sidebar_enabled=False,('message' in globals())}}
+		{{extend 'layout.html'}}
+		<h1>Available wiki pages</h1>
+		[ {{=A('search', _href=URL('search'))}} ]<br />
+		<p>
+			All Existing Wiki Pages:
+		</p>
+		<ul>{{for page in pages:}}
+		{{=LI(A(page.title, _href=URL('show', args=page.id)))}}
+		{{pass}}</ul>
+[ {{=A('create page', _href=URL('create'))}} ]
+	</body>
+<footer>Number of Visits: {{=counter}}</footer>
+
+</html>

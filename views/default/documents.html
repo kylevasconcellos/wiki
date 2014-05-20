@@ -1,0 +1,6 @@
+{{extend 'layout.html'}}
+<h1>Documents for page: {{=page.title}}</h1>
+{ {{=A('home', _href=URL('index', args=request.args))}}
+| {{=A('show', _href=URL('show', args=request.args))}} ]<br />
+<h2>Documents</h2>
+{{=grid}}
